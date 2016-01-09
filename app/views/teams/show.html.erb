@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>
+  <%= "Team: #{@team.name}" %>
+<% end %>
 
 <p>
   <strong>Name:</strong>
