@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :tasks  
+=======
+  resources :sprints
+  resources :tasks
+>>>>>>> c7a56e4f611dc9b401e6cb8cdd0b99a2f9c3b56a
   resources :teams
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

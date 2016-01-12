@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  started_on: MyString
+  finished_on: MyString
+  team_id: 
+
+two:
+  number: MyString
+  started_on: MyString
+  finished_on: MyString
+  team_id: 
