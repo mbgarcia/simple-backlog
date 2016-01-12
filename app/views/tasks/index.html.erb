@@ -9,21 +9,29 @@
       <th>Type</th>
       <th>Description</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tasks.each do |task| %>
-      <tr>
+      <tr class="<%= css_status_class task.status %>">
         <td><%= link_to task.mantis, "http://intranet.sefa.pa.gov.br/mantis/view.php?id=#{task.mantis}",
                   target: "_blank" %></td>
         <td><%= task.task_type %></td>
         <td><%= task.description %></td>
-        <td><%= label_status task.status %></td>
-        <td><%= show_link task %></td>
-        <td><%= edit_link edit_task_path(task) %></td>
-        <td><%= delete_link task %></td>
+        <td>
+          <%= link_to edit_task_path(task), class: "btn btn-#{css_status_class(task.status)} btn-xs",
+                title: "Change Status",
+                data: { remote: true } do %>
+                <%= task.status %>
+          <% end  %>
+        </td>
+        <td>
+          <%= show_link task %>
+          <%= edit_link edit_task_path(task) %>
+          <%= delete_link task %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,3 +40,7 @@
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+
+<div id="div-modal-change-status">
+  <%= render "modal_change_status" %>
+</div>

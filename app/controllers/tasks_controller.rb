@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :prepare, :change_status]
 
   # GET /tasks
   # GET /tasks.json
@@ -42,7 +42,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.html { redirect_to tasks_path }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:mantis, :task_type, :description, :status)
+      params.require(:task).permit(:id, :mantis, :task_type, :description, :status)
     end
 end

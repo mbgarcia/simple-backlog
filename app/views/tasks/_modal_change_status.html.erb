@@ -1,0 +1,24 @@
+<% unless @task.nil?  %>
+<div class="modal fade" id="modal-change-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Status: <%= @task.mantis %></h4>
+      </div>
+      <%= form_for(@task) do |f| %>
+        <div class="modal-body">
+            <div class="form-group">
+              <%= f.label :status, class: "control-label" %>
+              <%= f.select :status, Task::STATUS, {prompt: "Escolha"}, class: "form-control "%>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= submit_tag "Save Changes", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end  %>
