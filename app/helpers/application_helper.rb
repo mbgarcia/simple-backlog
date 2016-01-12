@@ -6,8 +6,6 @@ module ApplicationHelper
   def active?(c_name)
     if controller.controller_name == c_name
       "active"
-    elsif c_name.eql? "devise" && devise_controller?
-      "active"
     else
       ""
     end
