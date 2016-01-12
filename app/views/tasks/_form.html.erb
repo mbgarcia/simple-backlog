@@ -27,12 +27,65 @@
 			<%= f.select :status, Task::STATUS, {prompt: "Escolha"}, class: "form-control "%>
 		</div>
 	</div>
-	<div class="col-sm-12">
+
+	<div class="col-sm-8">
 		<div class="form-group">
 			<%= f.label :description, class: "control-label" %>
 			<%= f.text_field :description, class: "form-control" %>
 		</div>
 	</div>
+	<div class="col-sm-2">
+		<div class="form-group">
+			<%= f.label :team_id, class: "control-label" %>
+      <%= f.select :team_id, @teams.collect {|t| ["#{t.name}", t.id]}, {}, class: "form-control" %>
+		</div>
+	</div>
+	<div class="col-sm-2">
+		<div class="form-group">
+			<%= f.label :sprint_number, class: "control-label" %>
+			<%= f.text_field :sprint_number, class: "form-control" %>
+		</div>
+	</div>
+
+
+	<div class="col-sm-2">
+		<div class="form-group">
+			<%= f.label :estimated_time, class: "control-label" %>
+			<%= f.text_field :estimated_time, class: "form-control" %>
+		</div>
+	</div>	
+	<div class="col-sm-2">
+		<div class="form-group">
+			<%= f.label :complexity, class: "control-label" %>
+			<%= f.text_field :complexity, class: "form-control" %>
+		</div>
+	</div>	
+	<div class="col-sm-2">
+		<div class="form-group">
+			<%= f.label :skill, class: "control-label" %>
+			<%= f.text_field :skill, class: "form-control" %>
+		</div>
+	</div>	
+	<div class="col-sm-2">
+		<div class="form-group">
+			<%= f.label :effort_made, class: "control-label" %>
+			<%= f.text_field :effort_made, class: "form-control" %>
+		</div>
+	</div>	
+	<div class="col-sm-3">
+		<div class="form-group">
+			<%= f.label :member, class: "control-label" %>
+			<%= f.text_field :member, class: "form-control" %>
+		</div>
+	</div>	
+	<div class="col-sm-1">
+		<div class="form-group">
+			<%= f.label :planed, class: "control-label" %>
+			<%= f.text_field :planed, class: "form-control" %>
+		</div>
+	</div>	
+
+
 	<div class="actions">
 		<%= f.submit class: "btn btn-primary" %>
 	</div>

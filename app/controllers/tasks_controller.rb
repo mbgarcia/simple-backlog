@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :prepare, :change_status]
+  before_action :load_teams, only: [:new, :edit]
 
   # GET /tasks
   # GET /tasks.json
@@ -69,6 +70,10 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:id, :mantis, :task_type, :description, :status)
+      params.require(:task).permit(:id, :mantis, :task_type, :description, :status, :estimated_time, :complexity, :skill, :effort_made, :member, :planed, :team_id, :sprint_number)
     end
+
+    def load_teams
+      @teams  = Team.all
+    end    
 end

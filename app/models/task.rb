@@ -5,6 +5,7 @@ class Task < ActiveRecord::Base
 
 	validates :task_type, :status, :mantis, :description, presence: true
 
+	belongs_to :team
 
 	def status_value(status_name)
 		status = nil

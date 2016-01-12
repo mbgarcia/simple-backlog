@@ -22,5 +22,27 @@
   <%= @task.status %>
 </p>
 
+<p>
+  <strong>Esforço estimado:</strong>
+  <%= @task.estimated_time %> <span> - </span>
+  <%= @task.complexity %>     <span> - </span>
+  <%= @task.skill %>
+</p>
+
+<p>
+  <strong>Esforço realizado:</strong>
+  <%= @task.effort_made %>
+</p>
+
+<p>
+  <strong>Membro:</strong>
+  <%= @task.member %>
+</p>
+
+<p>
+  <strong>Planejada?</strong>
+  <%= @task.planed %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

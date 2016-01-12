@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111132733) do
+ActiveRecord::Schema.define(version: 20160112155718) do
 
   create_table "sprints", force: :cascade do |t|
     t.string   "number"
@@ -29,8 +29,16 @@ ActiveRecord::Schema.define(version: 20160111132733) do
     t.string   "task_type"
     t.string   "description"
     t.string   "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "estimated_time"
+    t.string   "complexity"
+    t.string   "skill"
+    t.string   "effort_made"
+    t.string   "member"
+    t.string   "planed"
+    t.string   "team_id"
+    t.string   "sprint_number"
   end
 
   create_table "teams", force: :cascade do |t|

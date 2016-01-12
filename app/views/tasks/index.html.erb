@@ -9,6 +9,13 @@
       <th>Type</th>
       <th>Description</th>
       <th>Status</th>
+      <th>Estimated Time</th>
+      <th>Complexity</th>
+      <th>Skill</th>
+      <th>Esforço</th>
+      <th>Planejada?</th>
+      <th>Time</th>
+      <th>Sprint</th>
       <th></th>
     </tr>
   </thead>
@@ -27,6 +34,28 @@
                 <%= task.status %>
           <% end  %>
         </td>
+        <td>
+          <%= task.estimated_time %>
+        </td>
+        <td>
+          <%= task.complexity %>
+        </td>
+        <td>
+          <%= task.skill %>
+        </td>
+        <td>
+          <%= task.effort_made %>
+        </td>
+        <td>
+          <%= task.planed %>
+        </td>
+        <td>
+          <%= task.team.name %>
+        </td>
+        <td>
+          <%= task.sprint_number %>
+        </td>
+
         <td>
           <%= show_link task %>
           <%= edit_link edit_task_path(task) %>
